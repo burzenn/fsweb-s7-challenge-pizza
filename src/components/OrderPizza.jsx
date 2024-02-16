@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import { Form, FormGroup, Label, Input, Button, FormFeedback, Nav, NavItem, NavLink } from 'reactstrap';
+import { Form, FormGroup, Label, Input, Button, FormFeedback, Nav, NavItem } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MalzemelerComp from "./MalzemelerComp";
 import malzemeler from './malzemeler.json';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { NavLink } from 'react-router-dom';
 
 
 
@@ -37,6 +39,12 @@ export default function OrderPizza() {
     const [formData, setFormData] = useState(initialFormData);
     const [errors, setErrors] = useState(initialErrors);
     const [isValid, setIsValid] = useState(false);
+
+    const history = useHistory();
+
+    const handleToMainPage = () => {
+        history.push("/");
+    };
 
 
     const handleChange = (event) => {
@@ -92,16 +100,15 @@ export default function OrderPizza() {
         <>
             <header>
                 <h1>Teknolojik Yemekler</h1>
+
                 <Nav>
                     <NavItem>
-                        <NavLink
-                            href="./MainPage"
-                        >
+                        <NavLink to="/" >
                             Anasayfa
                         </NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink active href="./Deneme">
+                        <NavLink to="/OrderPizza">
                             Siparişi Oluştur
                         </NavLink>
                     </NavItem>
@@ -153,7 +160,7 @@ export default function OrderPizza() {
                                     Büyük
                                 </Label>
                             </FormGroup>
-                            {errors.boyut && <FormFeedback> {errorMessages.email}</FormFeedback>}
+                            {errors.boyut && <FormFeedback> {errorMessages.boyut}</FormFeedback>}
 
                         </FormGroup>
 

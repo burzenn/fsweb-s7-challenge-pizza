@@ -23,6 +23,8 @@ header {
   box-shadow: 0px 9px 150px -30px rgba(0, 0, 0, 0.09);
 }
 
+
+
 .formcontainer {
   width: 60%;
   /* Formun %60'ını kaplayacak şekilde ayarlayın */
@@ -32,6 +34,6 @@ header {
   /* İçeriği yatay olarak hizalamak için */
   justify-content: center;
   /* İçeriği sayfa genelinde ortalamak için */
-  align-items: left;
-  /* İçeriği dikey olarak ortalamak için */
+  align-items: flex-start;
+  /* İçeriği dikey olarak sola hizalamak için */
 }
