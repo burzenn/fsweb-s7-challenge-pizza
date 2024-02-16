@@ -58,16 +58,18 @@ Proje iki zorluk aşamalı,
 
 ### Görev 1: Proje Kurulumu
 
-- [ ] Forklayarak bir kopya oluşturun
-- [ ] Forku klonlayın
-- [ ] Main branch üzerinde çalışın
-- [ ] Comitinizi pushlayın: `git push origin main`
-- [ ] Farklı paketler kullanmaya çalışın.
-	- `axios`
-	- `react-strap`
-	- `toastify`
-	- `tailwindcss`
-	- `cypress.io` v.b.
+- [x] Forklayarak bir kopya oluşturun
+- [x] Forku klonlayın
+- [x] Main branch üzerinde çalışın
+- [x] Comitinizi pushlayın: `git push origin main`
+- [x] Farklı paketler kullanmaya çalışın.
+	x- `axios`
+	x- `react-strap`
+	x- `toastify`
+	x- `tailwindcss`
+	x- `cypress.io`
+  x- `styled components`
+  x- `react-router`
 
 ### Görev 2: Iterasyon 1 - (IT1) Proje Planını, UI Tasarımı ve Diğer Tasarım Öğelerini İncelemek
 
@@ -102,8 +104,8 @@ IT1 aşamasına getirdiğiniz (minimum viable product), aşağıdaki gereksiniml
 - [ ] Bir sipariş formu
 - [ ] En az 3 karakter gerektiren bir isim inputu. (İsim alanı tasarımda yok olabilir. Form'da notlar alanının üzerine ekleyebilirsin)
 - [ ] Malzemeler için bir çoklu seçim - en az 4 adet ve en fazla 10 adet seçim yapılmalı (Tasarımda yine eksik gösterilmiş)
-- [ ] Pizza boyutunun seçilebileceği bir radio
-- [ ] Notlar için ek bir text area
+- [x] Pizza boyutunun seçilebileceği bir radio
+- [x] Notlar için ek bir text area
 - [ ] "Sipariş Ver" butonuna tıklandığında, sanki bir sunucuya veri gönderip, yanıt almış gibi davranmalı. Formda eksik bilgi veya hata varsa form disabled olmalı. (hem html hem submit fonksiyonundan gönderim engellenmeli)
 - [ ] Submit edince, Axios ile API request sonrası console'a gelen yanıtı basmalısın. [https://reqres.in/api/pizza](https://reqres.in/api/pizza)  ücretsiz bir mock api servisine, `axios` ile POST ile kendi datanızı attığınızda, size sanki veritabanına kaydedilmiş gibi id ve tarih ekleyip aynı veriyi geri döner. (SONRASINDA GET ATMIYORUZ)
 - [ ] Bu yanıtı gelen response'u, sipariş özeti console'a yazmalı.

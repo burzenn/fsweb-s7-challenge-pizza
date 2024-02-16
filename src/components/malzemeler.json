@@ -1,0 +1,54 @@
+[
+    {
+        "value": "peperoni",
+        "label": "Peperoni"
+    },
+    {
+        "value": "tavukızgara",
+        "label": "Tavuk Izgara"
+    },
+    {
+        "value": "mısır",
+        "label": "Mısır"
+    },
+    {
+        "value": "sarımsak",
+        "label": "Sarımsak"
+    },
+    {
+        "value": "ananas",
+        "label": "Ananas"
+    },
+    {
+        "value": "sosis",
+        "label": "Sosis"
+    },
+    {
+        "value": "soğan",
+        "label": "Soğan"
+    },
+    {
+        "value": "sucuk",
+        "label": "Sucuk"
+    },
+    {
+        "value": "biber",
+        "label": "Biber"
+    },
+    {
+        "value": "kabak",
+        "label": "Kabak"
+    },
+    {
+        "value": "kanada jambonu",
+        "label": "Kanada Jambonu"
+    },
+    {
+        "value": "domates",
+        "label": "Domates"
+    },
+    {
+        "value": "jalepeno",
+        "label": "Jalepeno"
+    }
+]
