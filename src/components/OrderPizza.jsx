@@ -8,9 +8,6 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 
-
-
-
 const initialFormData = {
     boyut: '',
     hamur: 'Hamur kalınlığı',
@@ -34,8 +31,9 @@ const errorMessages = {
     ad: "Lütfen minimum 4 harf şeklinde isminizi yazınız",
 }
 
+
 const FormContainer = styled.div`
-    width: 50%;
+    width: 40%;
     margin: 10px auto;
     place-items: center;
     display: grid;
@@ -64,7 +62,7 @@ const Header = styled.header`
 `;
 
 const HeaderCont = styled.div`
-    width: 50%;
+    width: 40%;
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -87,7 +85,6 @@ const FormWrapper = styled.div`
     flex-direction: row;
     justify-content: start;
     margin-top: 20px;
-     
 `;
 
 const EndBox = styled.div`
@@ -95,7 +92,7 @@ const EndBox = styled.div`
     align-items: flex-start;
     border-top: 1px solid;
     padding-top: 2rem;
-`
+`;
 
 const CounterWrapper = styled.div`
     display: flex;
@@ -114,23 +111,17 @@ const CounterButton = styled.button`
     border-radius: 5px;
 `;
 
-
-
-
-
 export default function OrderPizza() {
     const [formData, setFormData] = useState(initialFormData);
     const [errors, setErrors] = useState(initialErrors);
     const [isValid, setIsValid] = useState(false);
     const [quantity, setQuantity] = useState(1);
     const [secimler, setSecimler] = useState(0);
-
     const history = useHistory();
 
     const handleToMainPage = () => {
         history.push("/");
     };
-
 
     const handleChange = (event) => {
         const { name, value, checked, type } = event.target;
@@ -182,11 +173,8 @@ export default function OrderPizza() {
             }));
             axios.post('https://run.mocky.io/v3/d90048b5-42f4-4de1-a353-a97d278e52c7', formData)
                 .then(response => {
-                    // Sunucudan gelen cevabı kontrol et
                     if (response.status === 200) {
                         console.log("Form verileri başarıyla gönderildi:", response.data);
-                        // Burada form verilerini gönderme işlemi başarılı olduğunda yapılacak işlemleri gerçekleştiriyorum
-                        // Response okaysa sipariş tamamlandı sayfasına yönlendiriyorum
                         history.push("/Completed");
                     } else {
                         console.error("Sunucu hatası:", response.statusText);
@@ -209,8 +197,6 @@ export default function OrderPizza() {
         event.preventDefault();
         setQuantity(prevQuantity => (prevQuantity > 1 ? prevQuantity - 1 : prevQuantity));
     };
-
-
 
     return (
         <>
@@ -235,18 +221,15 @@ export default function OrderPizza() {
 
             </Header>
 
-
             <FormContainer>
-
                 <Form>
                     <div style={{ fontSize: "22px", fontWeight: "bold", color: "rgba(41, 41, 41, 1)" }}>Position Absolute Acı Pizza</div>
                     <div style={{ display: "flex", flexWrap: "wrap" }}>
                         <p style={{ flex: 2, fontSize: "28px", fontWeight: "bold", color: "rgba(41, 41, 41, 1)" }}>85.50₺</p>
                         <p style={{ flex: 1, alignSelf: "flex-end", textAlign: "right" }}>4.9</p>
                         <p style={{ flex: 1, alignSelf: "flex-end", textAlign: "right" }}>(200)</p>
-                        <div>Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. . Küçük bir pizzaya bazen pizzetta denir.</div>
+                        <div>Frontend Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. . Küçük bir pizzaya bazen pizzetta denir.</div>
                     </div>
-
 
                     <FormWrapper>
                         <FormGroup style={{ flex: 1 }}>
@@ -291,7 +274,6 @@ export default function OrderPizza() {
                                 </Label>
                             </FormGroup>
                             {errors.boyut && <FormFeedback> {errorMessages.boyut}</FormFeedback>}
-
                         </FormGroup>
 
                         <FormGroup style={{ flex: 1 }}>
@@ -320,8 +302,6 @@ export default function OrderPizza() {
                         </FormGroup>
                     </FormWrapper>
 
-
-
                     <FormGroup style={{ grid: 1 }}>
                         <legend style={{ fontSize: "20px", fontWeight: "bold", color: "rgba(41, 41, 41, 1)" }}> Ek Malzemeler </legend>
                         <p>En Fazla 10 malzeme seçebilirsiniz. 5₺</p>
@@ -337,12 +317,10 @@ export default function OrderPizza() {
                                     style={{
                                         width: "30%", fontWeight: "bold", marginBottom: "10px", fontSize: "13px"
                                     }}
-
                                 />
                             ))}
                         </EkDiv>
                         {errors.ekmalzemeler && <FormFeedback>{errorMessages.ekmalzemeler}</FormFeedback>}
-
                     </FormGroup>
 
                     <FormGroup>
@@ -351,9 +329,10 @@ export default function OrderPizza() {
                             id="ad"
                             name="ad"
                             invalid={errors.ad}
-                            type="textarea"
+                            type="text" // Değiştirildi: type="textarea"
                             onChange={handleChange}
                         />
+                        {errors.ad && <FormFeedback>{errorMessages.ad}</FormFeedback>}
                     </FormGroup>
 
                     <FormGroup>
@@ -361,7 +340,7 @@ export default function OrderPizza() {
                         <Input
                             id="siparisnotu"
                             name="siparisnotu"
-                            type="textarea"
+                            type="text" // Değiştirildi: type="textarea"
                             onChange={handleChange}
                         />
                     </FormGroup>
@@ -386,9 +365,7 @@ export default function OrderPizza() {
                                         <CardText> {secimler.toFixed(2)}₺</CardText>
                                         <CardText> {quantity * (85 + secimler)}.00₺</CardText>
                                     </div>
-
                                 </div>
-
                             </Card>
                             <Button style={{ margin: "0", paddin: "0", width: "100%" }} disabled={!isValid} color="warning" onClick={handleSubmit}>
                                 SİPARİŞİ VER

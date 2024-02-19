@@ -19,7 +19,7 @@ const Container = styled.div`
 const Content = styled.div`
   text-align: center;
   color: white;
-  margin-top: 90px;
+  margin-top: 12rem;
 `;
 
 const Title1 = styled.h1`
@@ -30,15 +30,15 @@ const Title1 = styled.h1`
 
 const H1 = styled.h1`
     font-family: 'Roboto Condensed', sans-serif;
-    font-size: 60px;
+    font-size: 70px;
     font-weight: 325;
     line-height: 65px;
     letter-spacing: 0.1px;
     text-align: center;
     width: 580px;
-    height: 195px
-    top: 35px
-    left: -53.22px
+    height: 195px;
+    top: 35px;
+    left: -53.22px;
 `
 
 const StyledButton = styled(Button)`
@@ -62,8 +62,8 @@ export default function MainPage() {
             <Content>
                 <Title1>Teknolojik Yemekler</Title1>
                 <H1>KOD AÇIKTIRIR PİZZA, DOYURUR</H1>
-                <StyledButton onClick={handleButtonClick} color="warning">ACIKTIM</StyledButton>
 
+                <StyledButton onClick={handleButtonClick} color="warning">ACIKTIM</StyledButton>
             </Content>
         </Container>
     );
