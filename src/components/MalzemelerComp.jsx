@@ -6,9 +6,10 @@ export default function MalzemelerComp({
     fieldName,
     value,
     label,
+    style,
 }) {
     return (
-        <FormGroup check inline>
+        <FormGroup check inline style={style}>
             <Input
                 type="checkbox"
                 id={value}
@@ -16,6 +17,7 @@ export default function MalzemelerComp({
                 checked={isChecked}
                 name={fieldName}
                 value={value}
+
             />
             <Label check htmlFor={value}>
                 {label}
